@@ -3,87 +3,149 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Pieces: the work of Len Perez</title>
     
-    <!-- CSS Reset -->
     <style>
-        * {
+         /* CSS Variables for consistent theming */
+         :root {
+             --text-color: #333333;
+             --bg-color: #F9F9F9;
+             --link-color: #0D4C91;
+             --font-main: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+         }
+
+         /* Reset and Base Styles */
+         * {
             box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+         }
 
         body {
-            color: #333;
-            background-color: #f9f9f9;
-            font-family: system-ui, -apple-system, "Segoe UI", Helvetica, sans-serif;
+            margin: 0;
+            padding: 40px 20px;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            font-family: var(--font-main);
             line-height: 1.5;
-            display: flex;
-            min-height: 100vh;
         }
 
-        .container {
-            max-width: 800px;
-            margin: 40px auto;
-            padding: 2rem;
-        }
+         /* Container to center content on large screens */
+         .container {
+            max-width: 600px;
+            margin: 0 auto;
+         }
+
+         /* Typography Modernization */
+        h1, h2, h3 {
+            color: var(--text-color);
+            line-height: 1.2;
+            margin: 0.5em 0 1em 0;
+            font-family: var(--font-main);
+         }
 
         h1 {
-            font-size: 3rem;
-            font-weight: 500;
-        }
+            font-size: clamp(2rem, 4vw, 3.5rem); 
+            font-weight: 700; /* Bold for main headers */
+            margin-bottom: 0;
+            letter-spacing: -1px;
+         }
 
         h2 {
             text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: 1.8rem;
-            margin-bottom: 24px;
-        }
+            letter-spacing: 0.05em;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            opacity: 0.8;
+         }
 
-        p, h3 {
-            color: #333;
-            font-weight: normal;
-        }
+        h3 {
+            font-weight: 400;
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            color: var(--text-color);
+         }
 
+         /* Modern Link Styling */
         a {
-            color: #0d4c91;
+            color: var(--link-color);
             text-decoration: none;
-            transition: color 0.3s ease;
-            display: inline-block;
+            border-bottom: 1px solid var(--link-color);
+            padding-bottom: 2px;
+            transition: opacity 0.2s ease;
         }
 
-        a:hover, 
-        a:focus,
-        a:active {
-            color: inherit; /* Same as default for hover effect */
-            position: relative;
+         /* Link States for Accessibility and UX */
+        a:hover {
+            opacity: 0.85;
+            text-decoration: underline;
         }
 
-        .download-links {
+        a:focus, button:focus-visible, input:focus-visible {
+            outline: 3px solid var(--link-color);
+            outline-offset: 2px;
+        }
+
+         /* Mobile Responsive Container */
+         @media (max-width: 480px) {
+             .container {
+                padding-left: 15px;
+                padding-right: 15px;
+             }
+            
+            body {
+                padding: 20px 15px;
+             }
+         }
+
+         /* Utility Classes */
+         .divider {
             display: flex;
             justify-content: center;
-            gap: 1rem;
-            margin-top: 24px;
-        }
-    </style>
+            margin-top: 30px;
+            gap: 40px;
+            flex-wrap: wrap;
+         }
+        
+         /* Ensure buttons are touch-friendly on mobile */
+         .download-links {
+             padding: 8px 16px;
+             text-decoration: none;
+             color: var(--link-color);
+             border: 1px solid var(--link-color);
+             font-size: 0.9rem;
+             display: inline-block;
+             line-height: 1.2;
+         }
+
+     </style>
 </head>
 
-<body class="container">
-    <h1>PIECES</h1>
-    <h2>THE WORK OF LEN PEREZ</h2>
-    
-    <p>This site is currently under construction. In the meantime, feel free to download a PDF of my portfolios and résumé.</p>
-    
-    <div class="download-links">
-        <a href="LenPerez_resume.pdf">Résumé</a>
-        <span style="color: #666; margin: 0 12px;">|</span> <!-- Fallback separator -->
-        <a href="UX_portfolio.pdf">UX Portfolio</a>
-    </div>
+<body>
+     <div class="container">
+         <header>
+             <h1>PIECES</h1>
+             <h2>The Work of Len Perez</h2>
+         </header>
 
-    <!-- Add a graceful degradation comment for legacy IE users -->
-    <!--[if lt IE 9]>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <![endif]-->
+         <main>
+             <p>
+                This site is currently under construction.
+                 <br><br>
+                In the meantime, feel free to download a PDF of my portfolios and résumé.
+             </p>
+
+             <div class="divider">
+                 <!-- Updated relative paths for root folder -->
+                 <a href="LenPerez_resume.pdf" class="download-links">Resume</a>
+                 
+                 &nbsp;&nbsp;|&nbsp;&nbsp;
+                 
+                 <a href="UX_portfolio.pdf" class="download-links">UX Portfolio</a>
+             </div>
+         </main>
+
+         <footer>
+             <!-- Simple copyright notice for modern context -->
+             &copy; 2023 Len Perez. All Rights Reserved.
+         </footer>
+     </div>
 </body>
 </html>
