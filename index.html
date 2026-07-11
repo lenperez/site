@@ -1,76 +1,89 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Pieces: the work of Len Perez</title>
+    
+    <!-- CSS Reset -->
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-    <style type="text/css">
-        <!-- body {
-            color: #333333;
-            background-color: #F9F9F9;
-            background-image: url('Background Image');
-            background-repeat: no-repeat;
-        }
-        
-        a {
-            color: #0D4C91;
-        }
-        
-        a:visited {
-            color: #0D4C91;
-        }
-        
-        a:hover {
-            color: #0D4C91;
-        }
-        
-        a:active {
-            color: #0D4C91;
-        }
-        
-        p {
+        body {
             color: #333;
-            font-weight: lighter;
-            font-size: 12pt;
-            font-family: Helvetica, sans-serif;
+            background-color: #f9f9f9;
+            font-family: system-ui, -apple-system, "Segoe UI", Helvetica, sans-serif;
+            line-height: 1.5;
+            display: flex;
+            min-height: 100vh;
         }
-        
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 2rem;
+        }
+
         h1 {
-            color: #333;
-            font-weight: lighter;
-            font-size: 32pt;
-            font-family: Helvetica, sans-serif;
-            line-height: .05;
+            font-size: 3rem;
+            font-weight: 500;
         }
-        
+
         h2 {
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 1.8rem;
+            margin-bottom: 24px;
+        }
+
+        p, h3 {
             color: #333;
             font-weight: normal;
-            font-size: 10pt;
-            font-family: Helvetica, sans-serif;
-            font-variant: all-caps;
-            line-height: .5;
         }
-        
-        h3 {
-            color: #333;
-            font-weight: lighter;
-            font-size: 12pt;
-            font-family: Helvetica, sans-serif;
-            line-height: 1;
+
+        a {
+            color: #0d4c91;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            display: inline-block;
+        }
+
+        a:hover, 
+        a:focus,
+        a:active {
+            color: inherit; /* Same as default for hover effect */
+            position: relative;
+        }
+
+        .download-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 24px;
         }
     </style>
-    <!--[if IE]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
 </head>
 
-<body>
+<body class="container">
     <h1>PIECES</h1>
-    <h2>THE WORK OF LEN PEREZ</h2><br/>
-    <h3>This site is currently underconstruction.
-        <br>In the meantime, feel free to download a PDF of my portfolios and résumé.</h3>
-    <p><a href="LenPerez_resume.pdf">Résumé</a>&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;<a href="UX_portfolio.pdf">UX Portfolio</a></p>
+    <h2>THE WORK OF LEN PEREZ</h2>
+    
+    <p>This site is currently under construction. In the meantime, feel free to download a PDF of my portfolios and résumé.</p>
+    
+    <div class="download-links">
+        <a href="LenPerez_resume.pdf">Résumé</a>
+        <span style="color: #666; margin: 0 12px;">|</span> <!-- Fallback separator -->
+        <a href="UX_portfolio.pdf">UX Portfolio</a>
+    </div>
 
+    <!-- Add a graceful degradation comment for legacy IE users -->
+    <!--[if lt IE 9]>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
 </body>
 </html>
