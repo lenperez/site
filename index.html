@@ -3,101 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pieces: the work of Len Perez</title>
-    
+    <title>Pieces: The Work of Len Perez</title>
     <style>
-         /* CSS Variables for consistent theming */
-         :root {
-             --text-color: #333333;
-             --bg-color: #F9F9F9;
-             --link-color: #0D4C91;
-             --font-main: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-         }
-
-         /* Reset and Base Styles */
-         * {
-            box-sizing: border-box;
-         }
+        :root {
+            --primary-color: #0D4C91;
+            --bg-color: #F9F9F9;
+            --text-color: #333333;
+        }
 
         body {
-            margin: 0;
-            padding: 40px 20px;
-            color: var(--text-color);
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             background-color: var(--bg-color);
-            font-family: var(--font-main);
-            line-height: 1.5;
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; /* Centers content vertically on screen */
         }
 
-         /* Container to center content on large screens */
-         .container {
+        .container {
             max-width: 600px;
-            margin: 0 auto;
-         }
-
-         /* Typography Modernization */
-        h1, h2, h3 {
-            color: var(--text-color);
-            line-height: 1.2;
-            margin: 0.5em 0 1em 0;
-            font-family: var(--font-main);
-         }
+            padding: 40px;
+            text-align: center;
+        }
 
         h1 {
-            font-size: clamp(2rem, 4vw, 3.5rem); 
-            font-weight: 700; /* Bold for main headers */
-            margin-bottom: 0;
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
             letter-spacing: -1px;
-         }
+        }
 
         h2 {
+            font-size: 1.2rem;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            opacity: 0.8;
-         }
+            font-weight: 400;
+            color: #666;
+            margin-bottom: 2rem;
+        }
 
         h3 {
-            font-weight: 400;
-            font-size: clamp(1rem, 2vw, 1.25rem);
-            color: var(--text-color);
-         }
+            font-weight: normal;
+            color: #555;
+        }
 
-         /* Modern Link Styling */
         a {
-            color: var(--link-color);
+            color: var(--primary-color);
             text-decoration: none;
-            border-bottom: 1px solid var(--link-color);
-            padding-bottom: 2px;
-            transition: opacity 0.2s ease;
+            font-weight: bold;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.3s ease;
         }
 
-         /* Link States for Accessibility and UX */
         a:hover {
-            opacity: 0.85;
-            text-decoration: underline;
+            border-bottom: 2px solid var(--primary-color);
         }
 
-        a:focus, button:focus-visible, input:focus-visible {
-            outline: 3px solid var(--link-color);
-            outline-offset: 2px;
-        }
-
-         /* Mobile Responsive Container */
-         @media (max-width: 480px) {
-             .container {
-                padding-left: 15px;
-                padding-right: 15px;
-             }
-            
-            body {
-                padding: 20px 15px;
-             }
-         }
-
-         /* Utility Classes */
-         .divider {
+        .links {
+            margin-top: 20px;
             display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>PIECES</h1>
+        <h2>The Work of Len Perez</h2>
+    </header>
+
+    <main>
+        <h3>This site is currently under construction.</h3>
+        <p>In the meantime, feel free to download a PDF of my portfolios and résumé.</p>
+        
+        <div class="links">
+            <a href="LenPerez_resume.pdf">Résumé</a>
+            <span>|</span>
+            <a href="UX_portfolio.pdf">UX Portfolio</a>
+        </div>
+    </main>
+</div>
+
+</body>
+</html>
             justify-content: center;
             margin-top: 30px;
             gap: 40px;
